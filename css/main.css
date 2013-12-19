@@ -1,0 +1,91 @@
+/*Reset and default*/
+html,body,ul,li,span,div,a,p {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: normal;
+	font-family: helvetica, sans-serif;
+	list-style: none;
+	color: #fff;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 1.4em;
+	font-weight: normal;
+	margin-bottom: 50px;
+}
+
+button, input {
+	background-color: #a9e4f2;
+	padding: 12px;
+	padding-left: 25px;
+	padding-right: 25px;
+	box-shadow: 1px 2px 4px #888;
+	border: 0px;
+	font-size: 1.5em;
+	color: #fff;
+}
+
+
+html {
+	background-color: #75C0D1;
+}
+
+#wrapper {
+	width: 800px;
+	margin: auto;
+}
+	
+	.page {
+		text-align: center;
+		height: 100%;
+		padding-top: 50px;
+	}
+
+	#loginForm {
+		
+	}
+
+
+	#list {
+	
+	}
+	
+		#list > ul {
+			width: 708px;
+			text-align: left;
+			margin: auto;
+		}
+		
+			#list > ul > li {
+				display: inline-block;
+				width: 300px;
+				background-color: #a9e4f2;
+				padding: 12px;
+				padding-left: 25px;
+				padding-right: 25px;
+				box-shadow: 1px 2px 4px #888;
+				border: 0px;
+				margin: 2px;
+				cursor: pointer;
+				vertical-align: top;
+			}
+			
+			#list > ul > li:hover {
+				background-color: #97d7e5;
+			}
+			
+				#list > ul > li > .label {
+					font-size: 1.5em;
+				}
+				
+				#list > ul > li > .pass {
+					display: none;
+					color: #a9e4f2;
+				}
+				
