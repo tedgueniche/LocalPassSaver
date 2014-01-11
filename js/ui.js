@@ -1,13 +1,28 @@
 
 //UI Globals
-var listHtml = $('#list > ul');
-var goBtn = $('#ikGo');
+var listHtml = $('#list > ul#pass');
+var loginBtn = $('#ikGo');
+var addBtn = $('#lpGo');
 
 
 //Initialize the UI
 function initUI() {
 
-	goBtn.click(function() {
+	$('input').click(function() {
+		var defaultValue = $(this).attr('default');
+		if($(this).val() == defaultValue) {
+			$(this).val("");
+		}
+	});
+	
+	$('input').blur(function() {
+		var defaultValue = $(this).attr('default');
+		if($(this).val().length == 0) {
+			$(this).val(defaultValue);
+		}
+	});
+
+	loginBtn.click(function() {
 		
 		$('#loginForm.page').hide();
 		$('#list.page').show();
@@ -40,19 +55,47 @@ function initUI() {
 		
 	});
 	
+	addBtn.click(function() {
+		var label = $('#labelField').val();
+		var password = $('#passField').val();
+		
+		//Client-side Validation
+		if(label.length == 0 || password.length == 0)
+			return;
+		if(label == $('#labelField').attr('default') || password == $('#passField').attr('default'))
+			return;
+		
+		//Adding the new entry to the list
+		addToList(label, password, 'class="hidden"');
+		
+		$('#labelField').val($('#labelField').attr('default'));
+		$('#passField').val($('#passField').attr('default'));
+		
+		update();
+	});
+	
+	listHtml.on("click", ".rm", function() {
+		$(this).parent().remove();
+		update();
+	});
+	
 	$('#list.page').hide();
-
+	
 	//Live event to toggle the password on demand
 	listHtml.on("click", "li", function() {
 		
-		var item = $(this).children('.pass');
-		if(item.css('display') == 'none') {
+		var pass = $(this).children('.pass');
+		var rm = $(this).children('.rm');
+		if(pass.css('display') == 'none') {
 			$('.pass').hide();
-			item.show();
+			$('.rm').hide();
+			pass.show();
+			rm.show();
 		}
 		else {
 			$('.pass').hide();
-			item.hide();
+			pass.hide();
+			rm.hide();
 		}
 	});
 	
@@ -64,12 +107,27 @@ function clearList() {
 }
 
 //Adds one label/pass to the list
-function addToList(label,value) {
-	var html = '<li>';
+function addToList(label,value, attr) {
+	attr = (typeof(attr)==='undefined') ? '' : attr;
+	var html = '<li '+ attr +'>';
+		html += '<div class="rm">X</div>';
 		html += '<span class="label">'+ label +'</span>';
 		html += '<div class="pass">'+ value +'</div>';
 	html += '</li>';
 	listHtml.append(html);
+}
+
+function getList() {
+	var jsonArray = new Array();
+	var entries = listHtml.children('li');
+	entries.each(function(id, li) {
+		var entry = {};
+		entry['label'] = $(li).children('.label').html();
+		entry['value'] = $(li).children('.pass').html();
+		jsonArray.push(entry);
+	});
+	
+	return jsonArray;
 }
 
 //returns the entered password

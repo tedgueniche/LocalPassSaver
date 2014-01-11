@@ -15,19 +15,23 @@
 				<div class="page" id="loginForm">
 					<h1>Log in or GTFO</h1>
 					<h2>Watch your back, you never know who is peeking over your shoulder.</h2>
-					<input type="text" id="iField" name="i" value="ID"/>
-					<input type="password" id="kField" name="k" value=""/>
+					<input default="ID" type="text" id="iField" name="i" value="ID"/>
+					<input default="Password" type="password" id="kField" name="k" value="Password"/>
 					<button id="ikGo">GO</button>
 				</div>
 				
 				<div class="page" id="list">
 					<h1>Your secret shit</h1>
 					<h2>All of your stuff is encrypted client side and stored remotely, the server is clueless!</h2>
-					<ul>
+					<ul id="pass">
 						
 					</ul>
-				</div>
-			
+					<ul id="addForm">
+						<li><input default="Label" type="text" id="labelField" name="l" value="Label"/></li>
+						<li><input default="Password" type="text" id="passField" name="p" value="Password"/></li>
+						<li><button id="lpGo">Add</button></li>
+					</ul>
+				</div>	
 			</div>
 		</div>
 		

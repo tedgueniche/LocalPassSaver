@@ -1,4 +1,3 @@
-
 //Retrieve the data from the server
 //as an encrypted blob
 function get(callback) {
@@ -31,4 +30,16 @@ function push(dataCypher) {
 	}).fail(function(jqXHR, textStatus) {
 		alert('fail: '+ textStatus);
 	});
+}
+
+
+function update() {
+	//updating to the server
+	var key = getKey();
+	var jsonData = getList();
+	var dataCypher = encrypt(jsonData,key);
+	push(dataCypher.toString());
+	
+	//Refresh the data from the server
+	get(onDataReceived);
 }

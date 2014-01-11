@@ -4,7 +4,7 @@
  * by Ted Gueniche (ted.gueniche@gmail.com)
  * Push and get encrypted password
  * All passwords are encrypted client-side
- * You should use https when connecting to this server.
+ * and the encryption key never leave the client
  * 
  * Server side dependencies: none
  * 
