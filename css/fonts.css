@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'ClearSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('ClearSans'), local('ClearSans-Regular'), url('../fonts/ClearSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('ClearSans Italic'), local('ClearSans-Italic'), url('../fonts/ClearSans-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  font-style: normal;
+  font-weight: 550;
+  src: local('ClearSans Medium'), local('ClearSans-Medium'), url('../fonts/ClearSans-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  font-style: normal;
+  font-weight: 200;
+  src: local('ClearSans Light'), local('ClearSans-Light'), url('../fonts/ClearSans-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ClearSans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('ClearSans Bold'), local('ClearSans-Bold'), url('../fonts/ClearSans-Bold.woff') format('woff');
+}
