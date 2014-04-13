@@ -14,17 +14,25 @@
  *
 */
 
+//DEBUG only
 //Should be set to OFF
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$path = ".data";
 
+//Getting the action parameter
 if(!isset($_POST['a']))
 	fail("missing args");
-	
 $action = $_POST['a'];
 
+if(!isset($_POST['i']))
+	fail("missing args");
+$id = $_POST['i'];
+
+//Path to the data
+$path = ".data_". $id;
+
+//prevent undefined actions
 $allowedAction = array("01", "02");
 if(in_array($action, $allowedAction) == false)
 	fail("unknown");
@@ -46,15 +54,14 @@ switch($action) {
 		break;
 		
 	default:
-		echo "wtf";
+		echo "OMG";
 }
-	
+
+//Fail (FTW)
 function fail($msg) {
 	echo '<h1>fail</h1>'. $msg;
 	exit(0);
 }
 
-	
-	
 
 ?>
