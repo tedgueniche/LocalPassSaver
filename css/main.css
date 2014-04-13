@@ -78,16 +78,16 @@ button, input {
 			width: 88.5%; /*708px*/
 			text-align: left;
 			margin: auto;
-			overflow: auto;
+			overflow: hidden;
 		}
 		
 			#list > ul > li {
 				display: inline-block;
 				width: 42.37288%; /*300px*/
 				background-color: #a9e4f2;
-				padding: 4%;/*12px*/
-				padding-left: 8.333333%; /*25px*/
-				padding-right: 8.333333%;/*25px*/
+				padding: 2%;
+				padding-left: 3.5%;
+				padding-right: 3.5%;
 				box-shadow: 1px 2px 4px #888;
 				border: 0px;
 				margin: 2px;
@@ -104,7 +104,7 @@ button, input {
 			}
 			
 				#list > ul > li > .rm {
-					font-size: 1.5em;
+					font-size: 1em;
 					float: right;
 					font-weight: bold;
 					display: none;
