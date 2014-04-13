@@ -29,9 +29,10 @@ function initUI() {
 		
 		//getting the key
 		var key = getKey();
+		var id = getId();
 	
 		//Get the data remotely
-		get(onDataReceived);
+		get(id, onDataReceived);
 		
 		/*
 		//TESTING ONLY
@@ -133,4 +134,8 @@ function getList() {
 //returns the entered password
 function getKey() {
 	return $('#kField').val();
+}
+
+function getId() {
+	return $('#iField').val();
 }
