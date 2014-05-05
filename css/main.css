@@ -4,7 +4,7 @@ html,body,ul,li,span,div,a,p {
 	padding: 0px;
 	text-decoration: none;
 	font-weight: normal;
-	font-family: ClearSans, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	list-style: none;
 	color: #fff;
 }
@@ -38,6 +38,9 @@ button, input {
 	color: #fff;
 }
 
+
+
+/* Body */
 #wrapper {
 	width: 800px;
 	margin: auto;
